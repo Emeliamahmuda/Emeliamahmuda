@@ -1,0 +1,6 @@
+.jumbotron {
+	background-image: url(img/bc.jpg);
+	background-size: cover;
+	height: 770px;
+	text-align: center;
+}
