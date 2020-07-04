@@ -20,6 +20,6 @@ class Contoh extends CI_Controller {
 	 */
 	public function index()
 	{
-		echo "<h1>EMELIA MAHMUDA</h1>";
+		echo "<h1>ROLAN DWI PUTRA</h1>";
 	}
 }

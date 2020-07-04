@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.2.2
+-- version 3.4.5
 -- http://www.phpmyadmin.net
 --
--- Inang: 127.0.0.1
--- Waktu pembuatan: 02 Jul 2020 pada 06.51
--- Versi Server: 5.5.27
--- Versi PHP: 5.4.7
+-- Host: localhost
+-- Waktu pembuatan: 04. Juli 2020 jam 06:05
+-- Versi Server: 5.5.16
+-- Versi PHP: 5.3.8
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,28 +17,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Basis data: `ci32020`
+-- Database: `ci32020`
 --
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `proddi`
---
-
-CREATE TABLE IF NOT EXISTS `proddi` (
-  `no` int(5) NOT NULL AUTO_INCREMENT,
-  `nama_prodi` varchar(20) NOT NULL,
-  PRIMARY KEY (`no`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data untuk tabel `proddi`
---
-
-INSERT INTO `proddi` (`no`, `nama_prodi`) VALUES
-(1, 'Teknik Sipil'),
-(2, 'Teknik Informatika');
 
 -- --------------------------------------------------------
 
@@ -66,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `tb_alumni` (
 --
 
 INSERT INTO `tb_alumni` (`id`, `npm`, `nama`, `jk`, `alamat`, `prodi`, `angkatan`, `id_pekerjaan`, `alamat_kantor`, `keterangan`) VALUES
-(1, '17420029', 'Emelia Mahmuda', 'Perempuan', 'Tanjung Payang', 'Teknik Informatika', 2017, 1, 'Pagar Alam', 'test');
+(1, '17420008', 'Rolan Dwi Putra', 'Laki-Laki', 'Pagardin', 'Teknik Informatika', 2017, 1, 'Palembang', 'test');
 
 -- --------------------------------------------------------
 
@@ -81,29 +61,14 @@ CREATE TABLE IF NOT EXISTS `tb_buku_tamu` (
   `pesan` text NOT NULL,
   `tgl_pesan` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
--- Struktur dari tabel `tb_mahasiswa`
+-- Dumping data untuk tabel `tb_buku_tamu`
 --
 
-CREATE TABLE IF NOT EXISTS `tb_mahasiswa` (
-  `id` int(5) NOT NULL AUTO_INCREMENT,
-  `npm` varchar(9) NOT NULL,
-  `nama` varchar(25) NOT NULL,
-  `jk` varchar(9) NOT NULL,
-  `prodi` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
-
---
--- Dumping data untuk tabel `tb_mahasiswa`
---
-
-INSERT INTO `tb_mahasiswa` (`id`, `npm`, `nama`, `jk`, `prodi`) VALUES
-(5, '17420029', 'Emelia Mahmuda', 'Perempuan', 'Teknik Informatika');
+INSERT INTO `tb_buku_tamu` (`id`, `nama`, `email`, `pesan`, `tgl_pesan`) VALUES
+(1, 'Rolan Dwi Putra', 'rolandwiputra00@gmail.com', 'waktu adalah uang', '2020-04-05');
 
 -- --------------------------------------------------------
 
@@ -115,7 +80,14 @@ CREATE TABLE IF NOT EXISTS `tb_pekerjaan` (
   `id_pekerjaan` int(5) NOT NULL AUTO_INCREMENT,
   `pekerjaan` varchar(25) NOT NULL,
   PRIMARY KEY (`id_pekerjaan`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data untuk tabel `tb_pekerjaan`
+--
+
+INSERT INTO `tb_pekerjaan` (`id_pekerjaan`, `pekerjaan`) VALUES
+(1, 'Manajer');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

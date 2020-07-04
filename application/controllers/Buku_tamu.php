@@ -40,7 +40,11 @@ class Buku_tamu extends CI_Controller
             'total_rows' => $config['total_rows'],
             'start' => $start,
         );
-        $this->load->view('buku_tamu/tb_buku_tamu_list', $data);
+         $this->load->view('adminlte/header');
+         $this->load->view('adminlte/navbar');
+         $this->load->view('adminlte/sidebar');
+         $this->load->view('buku_tamu/tb_buku_tamu_list', $data);
+         $this->load->view('adminlte/footer');
     }
 
     public function read($id) 
@@ -54,7 +58,12 @@ class Buku_tamu extends CI_Controller
 		'pesan' => $row->pesan,
 		'tgl_pesan' => $row->tgl_pesan,
 	    );
+            $this->load->view('adminlte/header');
+            $this->load->view('adminlte/navbar');
+            $this->load->view('adminlte/sidebar');
             $this->load->view('buku_tamu/tb_buku_tamu_read', $data);
+            $this->load->view('adminlte/footer');
+
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('buku_tamu'));
@@ -72,7 +81,11 @@ class Buku_tamu extends CI_Controller
 	    'pesan' => set_value('pesan'),
 	    'tgl_pesan' => set_value('tgl_pesan'),
 	);
+        $this->load->view('adminlte/header');
+        $this->load->view('adminlte/navbar');
+        $this->load->view('adminlte/sidebar');
         $this->load->view('buku_tamu/tb_buku_tamu_form', $data);
+        $this->load->view('adminlte/footer');
     }
     
     public function create_action() 
@@ -109,7 +122,11 @@ class Buku_tamu extends CI_Controller
 		'pesan' => set_value('pesan', $row->pesan),
 		'tgl_pesan' => set_value('tgl_pesan', $row->tgl_pesan),
 	    );
+            $this->load->view('adminlte/header');
+            $this->load->view('adminlte/navbar');
+            $this->load->view('adminlte/sidebar');
             $this->load->view('buku_tamu/tb_buku_tamu_form', $data);
+             $this->load->view('adminlte/footer');
         } else {
             $this->session->set_flashdata('message', 'Record Not Found');
             redirect(site_url('buku_tamu'));
